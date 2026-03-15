@@ -8,58 +8,117 @@
 
 <style>
 
+*{
+box-sizing:border-box;
+}
+
 body{
-font-family:Arial;
 margin:0;
-background:#111;
+font-family:Arial;
+background:#0e0e0e;
 color:white;
 }
+
+/* HEADER */
 
 header{
 background:black;
 padding:20px;
 text-align:center;
 font-size:28px;
+font-weight:bold;
+letter-spacing:2px;
 }
+
+/* HERO */
 
 .hero{
-height:70vh;
-background:url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1");
+height:80vh;
+background:url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1500&q=60");
 background-size:cover;
+background-position:center;
 display:flex;
-align-items:center;
+flex-direction:column;
 justify-content:center;
-font-size:40px;
-font-weight:bold;
-}
-
-section{
-padding:50px;
+align-items:center;
 text-align:center;
 }
 
+.hero h1{
+font-size:50px;
+margin:0;
+}
+
+.hero p{
+font-size:20px;
+margin-top:10px;
+}
+
+.hero button{
+margin-top:20px;
+padding:15px 25px;
+background:#00c853;
+border:none;
+color:white;
+font-size:18px;
+cursor:pointer;
+}
+
+/* SECTION */
+
+section{
+padding:60px 30px;
+text-align:center;
+}
+
+/* SERVICES */
+
 .services{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+margin-top:40px;
 }
 
 .service{
-background:#222;
-padding:20px;
+background:#1a1a1a;
+padding:25px;
 border-radius:10px;
+transition:0.3s;
 }
+
+.service:hover{
+transform:scale(1.05);
+}
+
+.price{
+color:#00e676;
+margin-top:10px;
+font-size:20px;
+}
+
+/* GALLERY */
 
 .gallery{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:20px;
+margin-top:40px;
 }
 
 .gallery img{
 width:100%;
+height:260px;
+object-fit:cover;
 border-radius:10px;
+transition:0.3s;
 }
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+/* BOOKING */
 
 form{
 max-width:400px;
@@ -67,38 +126,51 @@ margin:auto;
 display:flex;
 flex-direction:column;
 gap:15px;
+margin-top:30px;
 }
 
 input,select{
-padding:10px;
+padding:12px;
 font-size:16px;
+border:none;
 }
 
 button{
-padding:12px;
+padding:14px;
 background:#00c853;
-color:white;
 border:none;
-cursor:pointer;
+color:white;
 font-size:18px;
+cursor:pointer;
 }
+
+/* MAP */
+
+iframe{
+border:none;
+border-radius:10px;
+}
+
+/* WHATSAPP BUTTON */
 
 .whatsapp{
 position:fixed;
 bottom:20px;
 right:20px;
 background:#25D366;
+padding:16px 22px;
+border-radius:30px;
 color:white;
-padding:15px;
-border-radius:50px;
 text-decoration:none;
 font-size:18px;
 }
 
+/* FOOTER */
+
 footer{
 background:black;
 padding:20px;
-text-align:center;
+margin-top:50px;
 }
 
 </style>
@@ -112,7 +184,15 @@ Universal Max Factor Barber
 </header>
 
 <div class="hero">
-Fresh Cuts Everyday
+
+<h1>Fresh Cuts. Sharp Style.</h1>
+
+<p>Professional Barber Shop</p>
+
+<button onclick="document.getElementById('booking').scrollIntoView()">
+Book Appointment
+</button>
+
 </div>
 
 <section>
@@ -123,22 +203,26 @@ Fresh Cuts Everyday
 
 <div class="service">
 <h3>Taper Fade</h3>
-<p>Professional taper fade haircut</p>
+<p>Clean professional taper fade</p>
+<div class="price">R120</div>
 </div>
 
 <div class="service">
 <h3>Skin Fade</h3>
-<p>Clean skin fade style</p>
+<p>Sharp skin fade haircut</p>
+<div class="price">R130</div>
 </div>
 
 <div class="service">
 <h3>Beard Trim</h3>
-<p>Sharp beard shaping</p>
+<p>Professional beard shaping</p>
+<div class="price">R70</div>
 </div>
 
 <div class="service">
 <h3>Haircut + Beard</h3>
-<p>Full grooming package</p>
+<p>Complete grooming package</p>
+<div class="price">R180</div>
 </div>
 
 </div>
@@ -151,23 +235,23 @@ Fresh Cuts Everyday
 
 <div class="gallery">
 
-<img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c">
+<img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=600&q=60">
 
-<img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a">
+<img src="https://images.unsplash.com/photo-1593702288056-f2d4e3a1d1c4?auto=format&fit=crop&w=600&q=60">
 
-<img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486">
+<img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=600&q=60">
 
-<img src="https://images.unsplash.com/photo-1593702288056-f2d4e3a1d1c4">
+<img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=600&q=60">
 
-<img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033">
+<img src="https://images.unsplash.com/photo-1618077360395-f3068be8e001?auto=format&fit=crop&w=600&q=60">
 
-<img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1">
+<img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=600&q=60">
 
 </div>
 
 </section>
 
-<section>
+<section id="booking">
 
 <h2>Book Appointment</h2>
 
@@ -179,10 +263,10 @@ Fresh Cuts Everyday
 
 <select>
 
-<option>Haircut</option>
 <option>Taper Fade</option>
-<option>Beard Trim</option>
+<option>Skin Fade</option>
 <option>Haircut + Beard</option>
+<option>Beard Trim</option>
 
 </select>
 
@@ -205,11 +289,13 @@ src="https://maps.google.com/maps?q=johannesburg&t=&z=13&ie=UTF8&iwloc=&output=e
 </section>
 
 <a class="whatsapp" href="https://wa.me/27700000000">
-WhatsApp
+Book on WhatsApp
 </a>
 
 <footer>
+
 Universal Max Factor Barber © 2026
+
 </footer>
 
 </body>
