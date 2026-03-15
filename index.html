@@ -1,97 +1,216 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Universal Max Factor – Wyatt Universal Barber</title>
-<link rel="stylesheet" href="style.css">
+
+<title>Universal Max Factor Barber</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+
+body{
+font-family:Arial;
+margin:0;
+background:#111;
+color:white;
+}
+
+header{
+background:black;
+padding:20px;
+text-align:center;
+font-size:28px;
+}
+
+.hero{
+height:70vh;
+background:url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1");
+background-size:cover;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:40px;
+font-weight:bold;
+}
+
+section{
+padding:50px;
+text-align:center;
+}
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+}
+
+.service{
+background:#222;
+padding:20px;
+border-radius:10px;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+border-radius:10px;
+}
+
+form{
+max-width:400px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+input,select{
+padding:10px;
+font-size:16px;
+}
+
+button{
+padding:12px;
+background:#00c853;
+color:white;
+border:none;
+cursor:pointer;
+font-size:18px;
+}
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px;
+border-radius:50px;
+text-decoration:none;
+font-size:18px;
+}
+
+footer{
+background:black;
+padding:20px;
+text-align:center;
+}
+
+</style>
+
 </head>
+
 <body>
 
-<!-- Hero Section -->
-<section class="hero">
-  <div class="hero-text">
-    <h1>Universal Max Factor – Wyatt Universal Barber</h1>
-    <p>Professional haircuts, shaves & styling for everyone</p>
-    <a href="#booking" class="btn">Book Now</a>
-  </div>
+<header>
+Universal Max Factor Barber
+</header>
+
+<div class="hero">
+Fresh Cuts Everyday
+</div>
+
+<section>
+
+<h2>Our Services</h2>
+
+<div class="services">
+
+<div class="service">
+<h3>Taper Fade</h3>
+<p>Professional taper fade haircut</p>
+</div>
+
+<div class="service">
+<h3>Skin Fade</h3>
+<p>Clean skin fade style</p>
+</div>
+
+<div class="service">
+<h3>Beard Trim</h3>
+<p>Sharp beard shaping</p>
+</div>
+
+<div class="service">
+<h3>Haircut + Beard</h3>
+<p>Full grooming package</p>
+</div>
+
+</div>
+
 </section>
 
-<!-- Services Section -->
-<section class="services">
-  <h2>Our Services</h2>
-  <div class="service-box">
-    <div class="service"><h3>Haircuts</h3><p>Classic & modern styles</p></div>
-    <div class="service"><h3>Shaves</h3><p>Hot towel & precision shaves</p></div>
-    <div class="service"><h3>Styling</h3><p>Beard trims & hair styling</p></div>
-  </div>
+<section>
+
+<h2>Our Work</h2>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c">
+
+<img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a">
+
+<img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486">
+
+<img src="https://images.unsplash.com/photo-1593702288056-f2d4e3a1d1c4">
+
+<img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033">
+
+<img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1">
+
+</div>
+
 </section>
 
-<!-- Gallery Section -->
-<section class="gallery">
-  <h2>Our Work</h2>
-  <img src="images/haircut1.jpg" alt="Haircut Example">
-  <img src="images/haircut2.jpg" alt="Haircut Example">
-  <img src="images/haircut3.jpg" alt="Haircut Example">
-  <img src="images/haircut4.jpg" alt="Haircut Example">
+<section>
+
+<h2>Book Appointment</h2>
+
+<form>
+
+<input type="text" placeholder="Your Name" required>
+
+<input type="date" required>
+
+<select>
+
+<option>Haircut</option>
+<option>Taper Fade</option>
+<option>Beard Trim</option>
+<option>Haircut + Beard</option>
+
+</select>
+
+<button type="submit">Book Now</button>
+
+</form>
+
 </section>
 
-<!-- Testimonials Section -->
-<section class="testimonials">
-  <h2>What Our Clients Say</h2>
-  <div class="review">
-    <p>"Best haircut ever! Friendly and professional staff."</p>
-    <h4>- Thabo M</h4>
-  </div>
-  <div class="review">
-    <p>"Clean shop and great style. Highly recommend!"</p>
-    <h4>- Lerato K</h4>
-  </div>
+<section>
+
+<h2>Find Us</h2>
+
+<iframe
+width="100%"
+height="300"
+src="https://maps.google.com/maps?q=johannesburg&t=&z=13&ie=UTF8&iwloc=&output=embed">
+</iframe>
+
 </section>
 
-<!-- Booking Section -->
-<section class="booking" id="booking">
-  <h2>Book Your Appointment</h2>
-  <form id="bookingForm" action="https://www.payfast.co.za/eng/process" method="POST">
-    <!-- PayFast Info -->
-    <input type="hidden" name="merchant_id" value="10000100">
-    <input type="hidden" name="merchant_key" value="46f0cd694581a">
-    <input type="hidden" name="return_url" value="https://yourwebsite.com/success">
-    <input type="hidden" name="cancel_url" value="https://yourwebsite.com/cancel">
-    <input type="hidden" name="notify_url" value="https://yourwebsite.com/notify">
+<a class="whatsapp" href="https://wa.me/27700000000">
+WhatsApp
+</a>
 
-    <!-- Customer Info -->
-    <input type="text" name="name_first" placeholder="Your Name" required><br>
-    <input type="email" name="email_address" placeholder="Email Address" required><br>
-    <input type="tel" name="cell_number" placeholder="Phone Number" required><br>
+<footer>
+Universal Max Factor Barber © 2026
+</footer>
 
-    <!-- Service Selection -->
-    <select name="item_name" id="serviceSelect" required>
-      <option value="">Select Service</option>
-      <option value="Haircut">Haircut - R150</option>
-      <option value="Shave">Shave - R100</option>
-      <option value="Styling">Styling - R200</option>
-    </select><br>
-
-    <!-- Appointment Date -->
-    <input type="date" id="appointmentDate" name="appointment_date" required min=""><br>
-
-    <!-- Amount -->
-    <input type="text" name="amount" id="amount" placeholder="Amount (R)" required readonly><br>
-
-    <button type="submit">Pay & Book</button>
-  </form>
-</section>
-
-<!-- Contact Section -->
-<section id="contact">
-  <h2>Contact Us</h2>
-  <p>Book via WhatsApp for faster response!</p>
-  <a href="https://wa.me/27700000000" class="btn">WhatsApp Us</a>
-  <p>Address: 123 Main Street, Johannesburg</p>
-  <p>Phone: 071 000 0000</p>
-</section>
-
-<script src="script.js"></script>
 </body>
 </html>
