@@ -5,21 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 *{box-sizing:border-box;}
-body{margin:0;font-family:Arial;background:#0e0e0e;color:white;}
+body{margin:0;font-family:Arial;background:#0e0e0e;color:white;overflow-x:hidden;}
 header{background:black;padding:20px;text-align:center;font-size:28px;font-weight:bold;letter-spacing:2px;}
-.hero{height:80vh;background:url("https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=1500&q=60");background-size:cover;background-position:center;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;}
-.hero h1{font-size:50px;margin:0;}
-.hero p{font-size:20px;margin-top:10px;}
-.hero button{margin-top:20px;padding:15px 25px;background:#00c853;border:none;color:white;font-size:18px;cursor:pointer;}
+.hero{position:relative;height:80vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;overflow:hidden;}
+.hero img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1s;}
+.hero img.active{opacity:1;}
+.hero h1{position:relative;font-size:50px;margin:0;z-index:2;}
+.hero p{position:relative;font-size:20px;margin-top:10px;z-index:2;}
+.hero button{position:relative;margin-top:20px;padding:15px 25px;background:#00c853;border:none;color:white;font-size:18px;cursor:pointer;z-index:2;}
 section{padding:60px 30px;text-align:center;}
 .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:25px;margin-top:40px;}
 .service{background:#1a1a1a;padding:25px;border-radius:10px;transition:0.3s;}
 .service:hover{transform:scale(1.05);}
 .price{color:#00e676;margin-top:10px;font-size:18px;}
-.gallery-slider{display:flex;overflow-x:auto;gap:20px;padding:20px 0;scroll-behavior:smooth;}
-.gallery-slider::-webkit-scrollbar{display:none;}
+.gallery-slider{display:flex;overflow:hidden;gap:20px;padding:20px 0;position:relative;}
+.slider-track{display:flex;animation:scroll 20s linear infinite;}
+@keyframes scroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
 .gallery-slide{min-width:220px;flex:0 0 auto;background:#1a1a1a;border-radius:10px;transition:transform 0.3s;}
-.gallery-slide img{width:100%;height:260px;object-fit:cover;border-radius:10px;}
+.gallery-slide img{width:100%;height:260px;object-fit:cover;border-radius:10px;transition:transform 0.3s;}
 .gallery-slide h3{padding:10px;font-size:16px;}
 .gallery-slide:hover{transform:scale(1.05);}
 form{max-width:500px;margin:auto;display:flex;flex-direction:column;gap:15px;margin-top:30px;}
@@ -37,6 +40,9 @@ footer{background:black;padding:20px;margin-top:50px;}
 <header>Universal Max Factor Barber</header>
 
 <div class="hero">
+<img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=1500&q=60" class="active">
+<img src="https://images.unsplash.com/photo-1593702288056-f2d4e3a1d1c4?auto=format&fit=crop&w=1500&q=60">
+<img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1500&q=60">
 <h1>Fresh Cuts. Sharp Styles.</h1>
 <p>Professional Barber Shop • Riverside View, Fourways, Johannesburg</p>
 <button onclick="document.getElementById('booking').scrollIntoView()">Book Appointment</button>
@@ -69,12 +75,17 @@ footer{background:black;padding:20px;margin-top:50px;}
 <section>
 <h2>Our Work</h2>
 <div class="gallery-slider">
+<div class="slider-track">
 <div class="gallery-slide"><img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=600&q=60"><h3>Taper Fade</h3></div>
-<div class="gallery-slide"><img src="https://images.unsplash.com/photo-1593702288056-f2d4e3a1d1c4?auto=format&fit=crop&w=600&q=60"><h3>Skin Fade</h3></div>
 <div class="gallery-slide"><img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=600&q=60"><h3>Waves Cut</h3></div>
 <div class="gallery-slide"><img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=600&q=60"><h3>Low Brush Fade</h3></div>
 <div class="gallery-slide"><img src="https://images.unsplash.com/photo-1618077360395-f3068be8e001?auto=format&fit=crop&w=600&q=60"><h3>Beard Lineup</h3></div>
 <div class="gallery-slide"><img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=600&q=60"><h3>Kids Fade</h3></div>
+<!-- Duplicate slides for infinite scroll -->
+<div class="gallery-slide"><img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=600&q=60"><h3>Taper Fade</h3></div>
+<div class="gallery-slide"><img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=600&q=60"><h3>Waves Cut</h3></div>
+<div class="gallery-slide"><img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=600&q=60"><h3>Low Brush Fade</h3></div>
+</div>
 </div>
 </section>
 
@@ -121,6 +132,17 @@ footer{background:black;padding:20px;margin-top:50px;}
 <a class="whatsapp" href="https://wa.me/27791662597?text=Hello!%20I%20want%20to%20view%20the%20catalog%20and%20book%20an%20appointment.">View Catalog on WhatsApp</a>
 
 <footer>Universal Max Factor Barber © 2026</footer>
+
+<script>
+// Hero slideshow
+let slides = document.querySelectorAll('.hero img');
+let current = 0;
+setInterval(() => {
+slides[current].classList.remove('active');
+current = (current+1)%slides.length;
+slides[current].classList.add('active');
+},4000);
+</script>
 
 </body>
 </html>
