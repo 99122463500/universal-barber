@@ -1,302 +1,126 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <title>Universal Max Factor Barber</title>
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <style>
-
-*{
-box-sizing:border-box;
-}
-
-body{
-margin:0;
-font-family:Arial;
-background:#0e0e0e;
-color:white;
-}
-
-/* HEADER */
-
-header{
-background:black;
-padding:20px;
-text-align:center;
-font-size:28px;
-font-weight:bold;
-letter-spacing:2px;
-}
-
-/* HERO */
-
-.hero{
-height:80vh;
-background:url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1500&q=60");
-background-size:cover;
-background-position:center;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-}
-
-.hero h1{
-font-size:50px;
-margin:0;
-}
-
-.hero p{
-font-size:20px;
-margin-top:10px;
-}
-
-.hero button{
-margin-top:20px;
-padding:15px 25px;
-background:#00c853;
-border:none;
-color:white;
-font-size:18px;
-cursor:pointer;
-}
-
-/* SECTION */
-
-section{
-padding:60px 30px;
-text-align:center;
-}
-
-/* SERVICES */
-
-.services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
-margin-top:40px;
-}
-
-.service{
-background:#1a1a1a;
-padding:25px;
-border-radius:10px;
-transition:0.3s;
-}
-
-.service:hover{
-transform:scale(1.05);
-}
-
-.price{
-color:#00e676;
-margin-top:10px;
-font-size:20px;
-}
-
-/* GALLERY */
-
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-margin-top:40px;
-}
-
-.gallery img{
-width:100%;
-height:260px;
-object-fit:cover;
-border-radius:10px;
-transition:0.3s;
-}
-
-.gallery img:hover{
-transform:scale(1.05);
-}
-
-/* BOOKING */
-
-form{
-max-width:400px;
-margin:auto;
-display:flex;
-flex-direction:column;
-gap:15px;
-margin-top:30px;
-}
-
-input,select{
-padding:12px;
-font-size:16px;
-border:none;
-}
-
-button{
-padding:14px;
-background:#00c853;
-border:none;
-color:white;
-font-size:18px;
-cursor:pointer;
-}
-
-/* MAP */
-
-iframe{
-border:none;
-border-radius:10px;
-}
-
-/* WHATSAPP BUTTON */
-
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-padding:16px 22px;
-border-radius:30px;
-color:white;
-text-decoration:none;
-font-size:18px;
-}
-
-/* FOOTER */
-
-footer{
-background:black;
-padding:20px;
-margin-top:50px;
-}
-
+*{box-sizing:border-box;}
+body{margin:0;font-family:Arial;background:#0e0e0e;color:white;}
+header{background:black;padding:20px;text-align:center;font-size:28px;font-weight:bold;letter-spacing:2px;}
+.hero{height:80vh;background:url("https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=1500&q=60");background-size:cover;background-position:center;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;}
+.hero h1{font-size:50px;margin:0;}
+.hero p{font-size:20px;margin-top:10px;}
+.hero button{margin-top:20px;padding:15px 25px;background:#00c853;border:none;color:white;font-size:18px;cursor:pointer;}
+section{padding:60px 30px;text-align:center;}
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:25px;margin-top:40px;}
+.service{background:#1a1a1a;padding:25px;border-radius:10px;transition:0.3s;}
+.service:hover{transform:scale(1.05);}
+.price{color:#00e676;margin-top:10px;font-size:18px;}
+.gallery-slider{display:flex;overflow-x:auto;gap:20px;padding:20px 0;scroll-behavior:smooth;}
+.gallery-slider::-webkit-scrollbar{display:none;}
+.gallery-slide{min-width:220px;flex:0 0 auto;background:#1a1a1a;border-radius:10px;transition:transform 0.3s;}
+.gallery-slide img{width:100%;height:260px;object-fit:cover;border-radius:10px;}
+.gallery-slide h3{padding:10px;font-size:16px;}
+.gallery-slide:hover{transform:scale(1.05);}
+form{max-width:500px;margin:auto;display:flex;flex-direction:column;gap:15px;margin-top:30px;}
+input,select{padding:12px;font-size:16px;border:none;}
+button{padding:14px;background:#00c853;border:none;color:white;font-size:18px;cursor:pointer;}
+button:hover{background:#00e676;}
+.whatsapp{position:fixed;bottom:20px;right:20px;background:#25D366;padding:16px 22px;border-radius:30px;color:white;text-decoration:none;font-size:18px;}
+iframe{border:none;border-radius:10px;}
+footer{background:black;padding:20px;margin-top:50px;}
+.contact-info{margin-top:20px;font-size:16px;}
 </style>
-
 </head>
-
 <body>
 
-<header>
-Universal Max Factor Barber
-</header>
+<header>Universal Max Factor Barber</header>
 
 <div class="hero">
-
-<h1>Fresh Cuts. Sharp Style.</h1>
-
-<p>Professional Barber Shop</p>
-
-<button onclick="document.getElementById('booking').scrollIntoView()">
-Book Appointment
-</button>
-
+<h1>Fresh Cuts. Sharp Styles.</h1>
+<p>Professional Barber Shop • Riverside View, Fourways, Johannesburg</p>
+<button onclick="document.getElementById('booking').scrollIntoView()">Book Appointment</button>
 </div>
 
 <section>
-
-<h2>Our Services</h2>
-
+<h2>Our Services & Prices</h2>
 <div class="services">
-
-<div class="service">
-<h3>Taper Fade</h3>
-<p>Clean professional taper fade</p>
-<div class="price">R120</div>
+<div class="service"><h3>Lower Taper Fade & Dye</h3><div class="price">R120</div></div>
+<div class="service"><h3>Top High Fade & Dye</h3><div class="price">R120</div></div>
+<div class="service"><h3>Kiddies Fade & Dye</h3><div class="price">R80</div></div>
+<div class="service"><h3>Top Fade & Dye</h3><div class="price">R120</div></div>
+<div class="service"><h3>Mid Bald Fade & Dye</h3><div class="price">R120</div></div>
+<div class="service"><h3>Low Brush Fade & Dye</h3><div class="price">R120</div></div>
+<div class="service"><h3>Mid Fade & Dye</h3><div class="price">R120</div></div>
+<div class="service"><h3>Taper Fade & Dye</h3><div class="price">R120</div></div>
+<div class="service"><h3>Ladies Haircut & Dye</h3><div class="price">R120</div></div>
+<div class="service"><h3>Mid Wave Fade & Dye</h3><div class="price">R120</div></div>
+<div class="service"><h3>Plain Bald Fade & Brush Fade & Mid Fade</h3><div class="price">R60</div></div>
+<div class="service"><h3>Haircut</h3><div class="price">R120</div></div>
+<div class="service"><h3>Taper Faded & Men Fade</h3><div class="price">R120</div></div>
+<div class="service"><h3>Ladies Haircut & Mid Fade</h3><div class="price">R120</div></div>
+<div class="service"><h3>Taper Fade & Dye</h3><div class="price">R70</div></div>
+<div class="service"><h3>Massive Moak & Fade</h3><div class="price">R120</div></div>
+<div class="service"><h3>Low Fade with Dye</h3><div class="price">R80</div></div>
+<div class="service"><h3>Mid Fade High with Dye</h3><div class="price">R80</div></div>
 </div>
-
-<div class="service">
-<h3>Skin Fade</h3>
-<p>Sharp skin fade haircut</p>
-<div class="price">R130</div>
-</div>
-
-<div class="service">
-<h3>Beard Trim</h3>
-<p>Professional beard shaping</p>
-<div class="price">R70</div>
-</div>
-
-<div class="service">
-<h3>Haircut + Beard</h3>
-<p>Complete grooming package</p>
-<div class="price">R180</div>
-</div>
-
-</div>
-
 </section>
 
 <section>
-
 <h2>Our Work</h2>
-
-<div class="gallery">
-
-<img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=600&q=60">
-
-<img src="https://images.unsplash.com/photo-1593702288056-f2d4e3a1d1c4?auto=format&fit=crop&w=600&q=60">
-
-<img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=600&q=60">
-
-<img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=600&q=60">
-
-<img src="https://images.unsplash.com/photo-1618077360395-f3068be8e001?auto=format&fit=crop&w=600&q=60">
-
-<img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=600&q=60">
-
+<div class="gallery-slider">
+<div class="gallery-slide"><img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=600&q=60"><h3>Taper Fade</h3></div>
+<div class="gallery-slide"><img src="https://images.unsplash.com/photo-1593702288056-f2d4e3a1d1c4?auto=format&fit=crop&w=600&q=60"><h3>Skin Fade</h3></div>
+<div class="gallery-slide"><img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=600&q=60"><h3>Waves Cut</h3></div>
+<div class="gallery-slide"><img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=600&q=60"><h3>Low Brush Fade</h3></div>
+<div class="gallery-slide"><img src="https://images.unsplash.com/photo-1618077360395-f3068be8e001?auto=format&fit=crop&w=600&q=60"><h3>Beard Lineup</h3></div>
+<div class="gallery-slide"><img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=600&q=60"><h3>Kids Fade</h3></div>
 </div>
-
 </section>
 
 <section id="booking">
-
 <h2>Book Appointment</h2>
-
 <form>
-
 <input type="text" placeholder="Your Name" required>
-
 <input type="date" required>
-
 <select>
-
-<option>Taper Fade</option>
-<option>Skin Fade</option>
-<option>Haircut + Beard</option>
-<option>Beard Trim</option>
-
+<option>Lower Taper Fade & Dye</option>
+<option>Top High Fade & Dye</option>
+<option>Kiddies Fade & Dye</option>
+<option>Top Fade & Dye</option>
+<option>Mid Bald Fade & Dye</option>
+<option>Low Brush Fade & Dye</option>
+<option>Mid Fade & Dye</option>
+<option>Taper Fade & Dye</option>
+<option>Ladies Haircut & Dye</option>
+<option>Mid Wave Fade & Dye</option>
+<option>Plain Bald Fade & Brush Fade & Mid Fade</option>
+<option>Haircut</option>
+<option>Taper Faded & Men Fade</option>
+<option>Ladies Haircut & Mid Fade</option>
+<option>Taper Fade & Dye</option>
+<option>Massive Moak & Fade</option>
+<option>Low Fade with Dye</option>
+<option>Mid Fade High with Dye</option>
 </select>
-
 <button type="submit">Book Now</button>
-
 </form>
-
 </section>
 
 <section>
-
-<h2>Find Us</h2>
-
-<iframe
-width="100%"
-height="300"
-src="https://maps.google.com/maps?q=johannesburg&t=&z=13&ie=UTF8&iwloc=&output=embed">
-</iframe>
-
+<h2>Contact & Location</h2>
+<div class="contact-info">
+📞 Phone: 079 166 2597<br>
+📧 Email: <a href="mailto:mkaymaetha@gmail.com" style="color:#00e676;">mkaymaetha@gmail.com</a><br>
+🕒 Hours: 06:00 - 22:00<br>
+📍 Address: Riverside View, 31 Yellowwood Street, Boulevard Fourways, 2189 Johannesburg, South Africa
+</div>
+<iframe width="100%" height="300" src="https://maps.google.com/maps?q=31%20Yellowwood%20Street%20Fourways%20Johannesburg&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
 </section>
 
-<a class="whatsapp" href="https://wa.me/27700000000">
-Book on WhatsApp
-</a>
+<a class="whatsapp" href="https://wa.me/27791662597?text=Hello!%20I%20want%20to%20view%20the%20catalog%20and%20book%20an%20appointment.">View Catalog on WhatsApp</a>
 
-<footer>
-
-Universal Max Factor Barber © 2026
-
-</footer>
+<footer>Universal Max Factor Barber © 2026</footer>
 
 </body>
 </html>
