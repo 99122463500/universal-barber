@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Universal Max Factor – Wyatt Universal Barber</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-text">
+    <h1>Universal Max Factor – Wyatt Universal Barber</h1>
+    <p>Professional haircuts, shaves & styling for everyone</p>
+    <a href="#booking" class="btn">Book Now</a>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section class="services">
+  <h2>Our Services</h2>
+  <div class="service-box">
+    <div class="service"><h3>Haircuts</h3><p>Classic & modern styles</p></div>
+    <div class="service"><h3>Shaves</h3><p>Hot towel & precision shaves</p></div>
+    <div class="service"><h3>Styling</h3><p>Beard trims & hair styling</p></div>
+  </div>
+</section>
+
+<!-- Gallery Section -->
+<section class="gallery">
+  <h2>Our Work</h2>
+  <img src="images/haircut1.jpg" alt="Haircut Example">
+  <img src="images/haircut2.jpg" alt="Haircut Example">
+  <img src="images/haircut3.jpg" alt="Haircut Example">
+  <img src="images/haircut4.jpg" alt="Haircut Example">
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials">
+  <h2>What Our Clients Say</h2>
+  <div class="review">
+    <p>"Best haircut ever! Friendly and professional staff."</p>
+    <h4>- Thabo M</h4>
+  </div>
+  <div class="review">
+    <p>"Clean shop and great style. Highly recommend!"</p>
+    <h4>- Lerato K</h4>
+  </div>
+</section>
+
+<!-- Booking Section -->
+<section class="booking" id="booking">
+  <h2>Book Your Appointment</h2>
+  <form id="bookingForm" action="https://www.payfast.co.za/eng/process" method="POST">
+    <!-- PayFast Info -->
+    <input type="hidden" name="merchant_id" value="10000100">
+    <input type="hidden" name="merchant_key" value="46f0cd694581a">
+    <input type="hidden" name="return_url" value="https://yourwebsite.com/success">
+    <input type="hidden" name="cancel_url" value="https://yourwebsite.com/cancel">
+    <input type="hidden" name="notify_url" value="https://yourwebsite.com/notify">
+
+    <!-- Customer Info -->
+    <input type="text" name="name_first" placeholder="Your Name" required><br>
+    <input type="email" name="email_address" placeholder="Email Address" required><br>
+    <input type="tel" name="cell_number" placeholder="Phone Number" required><br>
+
+    <!-- Service Selection -->
+    <select name="item_name" id="serviceSelect" required>
+      <option value="">Select Service</option>
+      <option value="Haircut">Haircut - R150</option>
+      <option value="Shave">Shave - R100</option>
+      <option value="Styling">Styling - R200</option>
+    </select><br>
+
+    <!-- Appointment Date -->
+    <input type="date" id="appointmentDate" name="appointment_date" required min=""><br>
+
+    <!-- Amount -->
+    <input type="text" name="amount" id="amount" placeholder="Amount (R)" required readonly><br>
+
+    <button type="submit">Pay & Book</button>
+  </form>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>Book via WhatsApp for faster response!</p>
+  <a href="https://wa.me/27700000000" class="btn">WhatsApp Us</a>
+  <p>Address: 123 Main Street, Johannesburg</p>
+  <p>Phone: 071 000 0000</p>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
