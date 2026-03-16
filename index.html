@@ -6,14 +6,16 @@
 
 <style>
 
+/* GENERAL STYLES */
 body{
 margin:0;
-font-family:Arial;
+font-family:Arial, sans-serif;
 background:#0e0e0e;
 color:white;
 text-align:center;
 }
 
+/* HEADER */
 header{
 background:black;
 padding:20px;
@@ -21,9 +23,11 @@ font-size:28px;
 font-weight:bold;
 }
 
+/* HERO SECTION */
 .hero{
 height:80vh;
-background:url("universal-barber logo.jpeg") center/contain no-repeat;
+background:url("universal-barber-logo.jpeg") center/contain no-repeat;
+background-color:#000;
 display:flex;
 flex-direction:column;
 justify-content:center;
@@ -37,6 +41,7 @@ margin:0;
 
 .hero p{
 font-size:20px;
+margin:10px 0;
 }
 
 .hero button{
@@ -47,12 +52,15 @@ border:none;
 color:white;
 font-size:18px;
 cursor:pointer;
+border-radius:5px;
 }
 
+/* SECTIONS */
 section{
 padding:60px 20px;
 }
 
+/* SERVICES GRID */
 .services{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -69,22 +77,30 @@ border-radius:10px;
 .price{
 color:#00e676;
 margin-top:10px;
+font-weight:bold;
 }
 
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+/* SLIDING GALLERY */
+.gallery-container{
+overflow:hidden;
+position:relative;
 margin-top:40px;
 }
 
-.gallery img{
-width:100%;
+.gallery-track{
+display:flex;
+transition:transform 0.5s ease;
+}
+
+.gallery-track img{
+width:250px;
 height:250px;
 object-fit:cover;
 border-radius:10px;
+margin-right:10px;
 }
 
+/* FORM */
 form{
 max-width:500px;
 margin:auto;
@@ -93,10 +109,11 @@ flex-direction:column;
 gap:15px;
 }
 
-input,select{
+input, select{
 padding:12px;
 font-size:16px;
 border:none;
+border-radius:5px;
 }
 
 button{
@@ -106,8 +123,10 @@ border:none;
 color:white;
 font-size:18px;
 cursor:pointer;
+border-radius:5px;
 }
 
+/* WHATSAPP BUTTON */
 .whatsapp{
 position:fixed;
 bottom:20px;
@@ -118,8 +137,10 @@ border-radius:30px;
 color:white;
 text-decoration:none;
 font-size:18px;
+z-index:1000;
 }
 
+/* FOOTER */
 footer{
 background:black;
 padding:20px;
@@ -134,20 +155,14 @@ margin-top:40px;
 <header>Universal Max Factor Barber</header>
 
 <div class="hero">
-
 <h1>Fresh Cuts. Sharp Styles.</h1>
 <p>Professional Barber • Riverside View, Fourways</p>
-
 <button onclick="document.getElementById('booking').scrollIntoView()">Book Appointment</button>
-
 </div>
 
 <section>
-
 <h2>Our Services & Prices</h2>
-
 <div class="services">
-
 <div class="service"><h3>Lower Taper Fade & Dye</h3><div class="price">R120</div></div>
 <div class="service"><h3>Top High Fade & Dye</h3><div class="price">R120</div></div>
 <div class="service"><h3>Kiddies Fade & Dye</h3><div class="price">R80</div></div>
@@ -158,72 +173,72 @@ margin-top:40px;
 <div class="service"><h3>Taper Fade & Dye</h3><div class="price">R120</div></div>
 <div class="service"><h3>Ladies Haircut & Dye</h3><div class="price">R120</div></div>
 <div class="service"><h3>Mid Wave Fade & Dye</h3><div class="price">R120</div></div>
-<div class="service"><h3>Plain Bald Fade / Brush Fade / Mid Fade</h3><div class="price">R60</div></div>
-
+<div class="service"><h3>Plain Bald Fade / Brush / Mid Fade</h3><div class="price">R60</div></div>
 </div>
-
 </section>
 
 <section>
-
 <h2>Our Work</h2>
-
-<div class="gallery">
-
+<div class="gallery-container">
+<div class="gallery-track">
 <img src="Fade1.jpeg">
 <img src="fade2.jpeg">
 <img src="fade3.jpeg">
 <img src="fade4.jpeg">
 <img src="fade5.jpeg">
 <img src="fade6.jpeg">
-
 </div>
-
+</div>
 </section>
 
 <section id="booking">
-
 <h2>Book Appointment</h2>
-
 <form>
-
 <input type="text" placeholder="Your Name" required>
-
 <input type="date" required>
-
 <select>
-<option>Lower Taper Fade</option>
-<option>Top High Fade</option>
-<option>Kiddies Fade</option>
-<option>Mid Bald Fade</option>
-<option>Low Brush Fade</option>
-<option>Taper Fade</option>
+<option>Lower Taper Fade & Dye</option>
+<option>Top High Fade & Dye</option>
+<option>Kiddies Fade & Dye</option>
+<option>Top Fade & Dye</option>
+<option>Mid Bald Fade & Dye</option>
+<option>Low Brush Fade & Dye</option>
+<option>Mid Fade & Dye</option>
+<option>Taper Fade & Dye</option>
+<option>Ladies Haircut & Dye</option>
 </select>
-
 <button type="submit">Book Now</button>
-
 </form>
-
 </section>
 
 <section>
-
 <h2>Contact</h2>
-
 <p>📞 079 166 2597</p>
 <p>📧 mkaymaetha@gmail.com</p>
 <p>🕒 Open 06:00 - 22:00</p>
 <p>📍 Riverside View, 31 Yellowwood Street, Boulevard Fourways, Johannesburg</p>
-
 </section>
 
 <a class="whatsapp" href="https://wa.me/27791662597">Chat on WhatsApp</a>
 
 <footer>
-
 Universal Max Factor Barber © 2026
-
 </footer>
+
+<script>
+// SLIDING GALLERY SCRIPT
+const track = document.querySelector('.gallery-track');
+let index = 0;
+
+function slideGallery(){
+    index++;
+    if(index > 5) index = 0; // 6 images
+    const offset = -index * 260; // 250px image + 10px margin
+    track.style.transform = `translateX(${offset}px)`;
+}
+
+setInterval(slideGallery, 3000); // change every 3 seconds
+</script>
 
 </body>
 </html>
