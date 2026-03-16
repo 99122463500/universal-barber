@@ -14,7 +14,6 @@ background:#0e0e0e;
 color:white;
 text-align:center;
 overflow-x:hidden;
-transition: background 0.3s;
 }
 
 /* HEADER */
@@ -23,7 +22,6 @@ background:black;
 padding:20px;
 font-size:28px;
 font-weight:bold;
-transition: background 0.3s;
 }
 
 /* HERO SECTION */
@@ -36,14 +34,9 @@ display:flex;
 justify-content:center;
 align-items:flex-end;
 padding-bottom:40px;
-animation: heroZoom 8s ease-in-out forwards;
 }
 
-@keyframes heroZoom{
-0% { background-size:80% auto; }
-100% { background-size:100% auto; }
-}
-
+/* overlay to keep text readable */
 .hero-overlay{
 position:absolute;
 top:0;
@@ -232,7 +225,6 @@ footer{
 background:black;
 padding:20px;
 margin-top:40px;
-transition: background 0.3s;
 }
 
 </style>
@@ -272,11 +264,11 @@ transition: background 0.3s;
 <h2>Our Work</h2>
 <div class="gallery-container">
 <div class="gallery-track" id="gallery-track">
-<img src="Fade1.jpeg" onclick="openLightbox(this)">
 <img src="fade2.jpeg" onclick="openLightbox(this)">
 <img src="fade3.jpeg" onclick="openLightbox(this)">
 <img src="fade4.jpeg" onclick="openLightbox(this)">
 <img src="fade5.jpeg" onclick="openLightbox(this)">
+<img src="fade6.jpeg" onclick="openLightbox(this)">
 </div>
 </div>
 </section>
